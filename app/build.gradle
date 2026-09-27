@@ -1,0 +1,21 @@
+apply plugin: 'com.android.application'
+android {
+    namespace 'com.uart.tvvolume'
+    compileSdk 34
+    buildToolsVersion '30.0.3'
+    defaultConfig {
+        applicationId 'com.uart.tvvolume'
+        minSdk 26
+        targetSdk 34
+        versionCode 1
+        versionName '0.1'
+    }
+    buildTypes {
+        release {
+            // Personal sideload build: preserve the certificate of the installed test APK.
+            signingConfig signingConfigs.debug
+            debuggable false
+            minifyEnabled false
+        }
+    }
+}
